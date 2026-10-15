@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen-local-proxy"
+version = "0.1.0"
+description = "Local proxy for chat.qwen.ai: OpenAI-compatible API over a stealth-Chrome browser transport (FastAPI server + PySide6 GUI)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.9.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "python-multipart>=0.0.9",
+    "PySide6>=6.6.0",
+    "markdown2>=2.4.0",
+    "selenium>=4.20.0",
+]
+
+[project.scripts]
+qwen-proxy = "src.api.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "gui*"]

@@ -1,0 +1,31 @@
+# Local machine state — never publish these
+.env
+# The Chrome profile holds a live chat.qwen.ai login (Windows-encrypted cookies,
+# bound to this machine). It is created on first run; each PC logs in once.
+browser_profile/
+# Chat transcripts written by the GUI
+logs/
+
+# Virtual environment: setup.bat rebuilds it, and it is not portable between PCs
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Scratch output of the probe harnesses in scripts/
+probe_*.txt
+*.log
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Assistant working state (scratch, session records) - nothing to publish
+.qwen/
